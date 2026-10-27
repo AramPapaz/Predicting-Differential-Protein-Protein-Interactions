@@ -27,7 +27,7 @@ add link
 ```
 6. Install the remaining dependencies:
 ```
-   pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 
