@@ -7,7 +7,7 @@ from sklearn.impute import KNNImputer
 import argparse
 from scipy import stats
 from itertools import combinations
-from tqdm.auto import tqdm  # shows a bar with elapsed time, ETA and it/s (works in terminal and notebooks)
+from tqdm.auto import tqdm  
 from Bio import SeqIO
 
 
