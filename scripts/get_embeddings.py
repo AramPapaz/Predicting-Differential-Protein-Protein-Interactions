@@ -38,7 +38,7 @@ device = args.device
 cfg = load_config("esm2_t33_650M_UR50D.json")  # model config
 checkpoint_path = args.Mint_loc
 
-# Count rows once (cheap: reads a single column in chunks) for a proper progress bar
+# Count rows once for a proper progress bar
 n_rows = sum(
     len(c) for c in pd.read_csv(args.Inter_table, usecols=["Protein1"], chunksize=1_000_000)
 )
@@ -56,8 +56,7 @@ loader = torch.utils.data.DataLoader(
 wrapper = MINTWrapper(cfg, checkpoint_path, sep_chains=True, device=device)
 wrapper.eval()
 
-# Second reader, in lockstep with the loader (same batch size, same order).
-# Only the ID columns are needed, so the long sequence columns are not parsed again.
+
 csv_chunks = pd.read_csv(
     args.Inter_table, usecols=["Protein1", "Protein2"], chunksize=args.Batch_size
 )
