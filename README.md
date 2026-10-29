@@ -23,7 +23,7 @@ wget https://huggingface.co/varunullanat2012/mint/resolve/main/mint.ckpt
 ```
 5. Download the weighted random forest model and note the file path where it is stored.
 ```
-add link
+https://doi.org/10.5281/zenodo.23757927
 ```
 6. Install the remaining dependencies:
 ```
